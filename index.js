@@ -9,7 +9,14 @@ const APP_ID = process.env.APP_ID
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 
 function handleMessage(sender_psid, received_message) {
-    
+    let response;
+
+    if (received_message.text) {
+        response = {
+            "text": `You sent the message: "${ received_message.text }". Now send me an image!`
+        }
+    }
+    callSendAPI(sender_psid, response);
 }
 
 function handlePostback(sender_psid, received_message) {
@@ -17,7 +24,12 @@ function handlePostback(sender_psid, received_message) {
 }
 
 function callSendAPI(sender_psid, received_message) {
-    
+    let reques_body = {
+        "recipient": {
+            "id": sender_psid
+        },
+        "message": response
+    }
 }
 
 app.post('/webhook', (req, res) => {
@@ -31,6 +43,12 @@ app.post('/webhook', (req, res) => {
 
             let sender_psid = webhook_event.sender.id;
             console.log(`Sender PSID: ${sender_psid}`);
+
+            if (webhook_event.message) {
+                handleMessage(sender_psid, webhook_event.message);
+            } else if (webhook_event.message.postback) {
+                handlePostback(sender_psid, webhook_event.postback);
+            }
         });
 
         res.status(200).send('EVENT_RECEIVED');
