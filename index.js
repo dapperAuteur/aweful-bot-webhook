@@ -31,12 +31,12 @@ function handleMessage(sender_psid, received_message) {
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "Yea!",
+                                "title": "Yes!",
                                 "payload": "yes"
                             },
                             {
                                 "type": "postback",
-                                "title": "Nope!",
+                                "title": "No!",
                                 "payload": "no"
                             }
                         ]
@@ -49,7 +49,17 @@ function handleMessage(sender_psid, received_message) {
 }
 
 function handlePostback(sender_psid, received_postback) {
-    
+    let response;
+
+    let payload received_postback.payload;
+
+    if (payload === 'yes') {
+        response = { "text": "Thanks!" }
+    } else if (payload === 'no') {
+        response = { "text": "Oops, try sending another image." }
+    }
+
+    callSendAPI(sender_psid, response);
 }
 
 function callSendAPI(sender_psid, response) {
