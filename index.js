@@ -11,6 +11,7 @@ const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 
 function handleMessage(sender_psid, received_message) {
     let response;
+    console.log("handleMessage");
 
     if (received_message.text) {
         response = {
