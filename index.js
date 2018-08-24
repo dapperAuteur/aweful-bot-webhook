@@ -7,7 +7,7 @@ const APP_ID = process.env.APP_ID;
 
 app.post('/webhook', (req, res) => {
     let body = req.body;
-    console.log(req);
+    console.log(req.body);
 
     if (body.object === 'page') {
         body.entry.forEach(function (entry) {
