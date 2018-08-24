@@ -1,14 +1,10 @@
 'use strict'
 
-VERIFY_TOKEN
-APP_ID
-PAGE_ACCESS_TOKEN
-
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express().use(bodyParser.json());
 
-let VERIFY_TOKEN = process.env.VERIFY_TOKEN
+const VERIFY_TOKEN = process.env.VERIFY_TOKEN
 const APP_ID = process.env.APP_ID
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 
