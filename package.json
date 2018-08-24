@@ -1,0 +1,15 @@
+{
+  "name": "aweful-bot-webhook",
+  "version": "1.0.0",
+  "description": "fb chatbot to test cards and share button",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aweful <aweful@awews.com>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}
