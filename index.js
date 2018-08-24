@@ -8,7 +8,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express().use(bodyParser.json());
 
-const VERIFY_TOKEN = process.env.VERIFY_TOKEN
+let VERIFY_TOKEN = process.env.VERIFY_TOKEN
 const APP_ID = process.env.APP_ID
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 
