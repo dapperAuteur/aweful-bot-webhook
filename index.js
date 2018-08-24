@@ -51,7 +51,7 @@ function handleMessage(sender_psid, received_message) {
 function handlePostback(sender_psid, received_postback) {
     let response;
 
-    let payload received_postback.payload;
+    let payload = received_postback.payload;
 
     if (payload === 'yes') {
         response = { "text": "Thanks!" }
