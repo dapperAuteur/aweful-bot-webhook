@@ -3,6 +3,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express().use(bodyParser.json());
+const APP_ID = process.env.APP_ID;
 
 app.post('/webhook', (req, res) => {
     let body = req.body;
@@ -21,7 +22,7 @@ app.post('/webhook', (req, res) => {
 });
 
 app.get('/webhook', (req, res) => {
-    let VERIFY_TOKEN = "token";
+    let VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 
     let mode = req.query['hub.mode'];
     let token = req.query['hub.verify_token'];
