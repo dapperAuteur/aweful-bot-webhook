@@ -25,9 +25,9 @@ function handleMessage(sender_psid, received_message) {
                 "template_type":"generic",
                 "elements":[
                   {
-                    "title":"Breaking News: Record Thunderstorms",
-                    "subtitle":"The local area is due for record thunderstorms over the weekend.",
-                    "image_url":"https://thechangreport.com/img/lightning.png",
+                    "title":"#SixBySix Challenge",
+                    "subtitle":"Accept The Challenge To Impact Change In Your Community",
+                    "image_url":"https://firebasestorage.googleapis.com/v0/b/js-react-todo-0002.appspot.com/o/Frame_Six_By_Six.png?alt=media&token=6a5fc1a7-663d-410b-9fde-42f6837c5ea0",
                     "buttons": [
                       {
                         "type": "element_share",
@@ -38,18 +38,18 @@ function handleMessage(sender_psid, received_message) {
                               "template_type": "generic",
                               "elements": [
                                 {
-                                  "title": "I took the hat quiz",
-                                  "subtitle": "My result: Fez",
-                                  "image_url": "https://bot.peters-hats.com/img/hats/fez.jpg",
+                                  "title": "Share The Challenge",
+                                  "subtitle": "#SixBySix",
+                                  "image_url": "https://firebasestorage.googleapis.com/v0/b/js-react-todo-0002.appspot.com/o/anchorman-celebrate.gif?alt=media&token=9b40b360-8788-43ff-90c7-8d82cb9a18a5",
                                   "default_action": {
                                     "type": "web_url",
-                                    "url": "http://m.me/petershats?ref=invited_by_24601"
+                                    "url": "https://js-react-todo-0002.firebaseapp.com/"
                                   },
                                   "buttons": [
                                     {
                                       "type": "web_url",
-                                      "url": "http://m.me/petershats?ref=invited_by_24601", 
-                                      "title": "Take Quiz"
+                                      "url": "https://www.facebook.com/sixbysixvote/", 
+                                      "title": "Visit Fb Page"
                                     }
                                   ]
                                 }
