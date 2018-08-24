@@ -2,6 +2,7 @@
 
 const express = require('express')
 const bodyParser = require('body-parser')
+const request = require('request');
 const app = express().use(bodyParser.json());
 
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN
@@ -19,17 +20,30 @@ function handleMessage(sender_psid, received_message) {
     callSendAPI(sender_psid, response);
 }
 
-function handlePostback(sender_psid, received_message) {
+function handlePostback(sender_psid, received_postback) {
     
 }
 
-function callSendAPI(sender_psid, received_message) {
-    let reques_body = {
+function callSendAPI(sender_psid, response) {
+    let request_body = {
         "recipient": {
             "id": sender_psid
         },
         "message": response
     }
+
+    request({
+        "uri": "https://graph.facebook.com/v3.1/me.messages",
+        "qs": { "access_token": PAGE_ACCESS_TOKEN },
+        "method": "POST",
+        "json": request_body
+    }, (err, res, body) => {
+        if (!err) {
+            console.log('message sent!');
+        } else {
+            console.err(`Unable to send message: ${ err }`);
+        }
+    });
 }
 
 app.post('/webhook', (req, res) => {
