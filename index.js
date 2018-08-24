@@ -12,6 +12,18 @@ const VERIFY_TOKEN = process.env.VERIFY_TOKEN
 const APP_ID = process.env.APP_ID
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 
+function handleMessage(sender_psid, received_message) {
+    
+}
+
+function handlePostback(sender_psid, received_message) {
+    
+}
+
+function callSendAPI(sender_psid, received_message) {
+    
+}
+
 app.post('/webhook', (req, res) => {
     let body = req.body;
     console.log(req.body);
@@ -20,6 +32,9 @@ app.post('/webhook', (req, res) => {
         body.entry.forEach(function (entry) {
             let webhook_event = entry.messaging[0];
             console.log(webhook_event);
+
+            let sender_psid = webhook_event.sender.id;
+            console.log(`Sender PSID: ${sender_psid}`);
         });
 
         res.status(200).send('EVENT_RECEIVED');
@@ -30,7 +45,6 @@ app.post('/webhook', (req, res) => {
 });
 
 app.get('/webhook', (req, res) => {
-    let VERIFY_TOKEN = process.env.VERIFY_TOKEN || "asdfasdfaefawefaefasdfadsaadsfadsfaadf"
 
     let mode = req.query['hub.mode'];
     let token = req.query['hub.verify_token'];
