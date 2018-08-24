@@ -47,11 +47,6 @@ function handleMessage(sender_psid, received_message) {
                                   },
                                   "buttons": [
                                     {
-                                      "type": "web_url",
-                                      "url": "https://www.facebook.com/sixbysixvote/", 
-                                      "title": "Visit Fb Page"
-                                    },
-                                    {
                                         "type": "web_url",
                                         "url": "https://m.me/sixbysixvote/", 
                                         "title": "Talk To SixBySix"
