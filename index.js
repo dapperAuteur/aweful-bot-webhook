@@ -31,13 +31,13 @@ function handleMessage(sender_psid, received_message) {
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "Yes!",
-                                "payload": "yea"
+                                "title": "Yea!",
+                                "payload": "yes"
                             },
                             {
                                 "type": "postback",
-                                "title": "No!",
-                                "payload": "nope"
+                                "title": "Nope!",
+                                "payload": "no"
                             }
                         ]
                     }]
@@ -89,7 +89,7 @@ app.post('/webhook', (req, res) => {
 
             if (webhook_event.message) {
                 handleMessage(sender_psid, webhook_event.message);
-            } else if (webhook_event.message.postback) {
+            } else if (webhook_event.postback) {
                 handlePostback(sender_psid, webhook_event.postback);
             }
         });
