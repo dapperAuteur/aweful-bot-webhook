@@ -5,6 +5,9 @@ const bodyParser = require('body-parser')
 const request = require('request');
 const app = express().use(bodyParser.json());
 
+const responses = require('./responses');
+let get_started = responses.GetStarted;
+
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN
 const APP_ID = process.env.APP_ID
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
@@ -18,52 +21,54 @@ function handleMessage(sender_psid, received_message) {
         //     "text": `You sent the message: "${ received_message.text }". Now send me an image!`
         // }
 
-        response = {
-            "attachment":{
-              "type":"template",
-              "payload":{
-                "template_type":"generic",
-                "elements":[
-                  {
-                    "title":"#SixBySix Challenge",
-                    "subtitle":"Accept The Challenge To Impact Change In Your Community",
-                    "image_url":"https://firebasestorage.googleapis.com/v0/b/js-react-todo-0002.appspot.com/o/Frame_Six_By_Six.png?alt=media&token=6a5fc1a7-663d-410b-9fde-42f6837c5ea0",
-                    "buttons": [
-                      {
-                        "type": "element_share",
-                        "share_contents": { 
-                          "attachment": {
-                            "type": "template",
-                            "payload": {
-                              "template_type": "generic",
-                              "elements": [
-                                {
-                                  "title": "Share The Challenge",
-                                  "subtitle": "#SixBySix",
-                                  "image_url": "https://firebasestorage.googleapis.com/v0/b/js-react-todo-0002.appspot.com/o/anchorman-celebrate.gif?alt=media&token=9b40b360-8788-43ff-90c7-8d82cb9a18a5",
-                                  "default_action": {
-                                    "type": "web_url",
-                                    "url": "https://js-react-todo-0002.firebaseapp.com/"
-                                  },
-                                  "buttons": [
-                                    {
-                                        "type": "web_url",
-                                        "url": "https://m.me/sixbysixvote/", 
-                                        "title": "Talk To SixBySix"
-                                      }
-                                  ]
-                                }
-                              ]
-                            }
-                          }
-                        }
-                      }
-                    ]
-                  }
-                ]
-              }
-            }
-          };
+        response = get_started;
+
+        // response = {
+        //     "attachment":{
+        //       "type":"template",
+        //       "payload":{
+        //         "template_type":"generic",
+        //         "elements":[
+        //           {
+        //             "title":"#SixBySix Challenge",
+        //             "subtitle":"Accept The Challenge To Impact Change In Your Community",
+        //             "image_url":"https://firebasestorage.googleapis.com/v0/b/js-react-todo-0002.appspot.com/o/Frame_Six_By_Six.png?alt=media&token=6a5fc1a7-663d-410b-9fde-42f6837c5ea0",
+        //             "buttons": [
+        //               {
+        //                 "type": "element_share",
+        //                 "share_contents": { 
+        //                   "attachment": {
+        //                     "type": "template",
+        //                     "payload": {
+        //                       "template_type": "generic",
+        //                       "elements": [
+        //                         {
+        //                           "title": "Share The Challenge",
+        //                           "subtitle": "#SixBySix",
+        //                           "image_url": "https://firebasestorage.googleapis.com/v0/b/js-react-todo-0002.appspot.com/o/anchorman-celebrate.gif?alt=media&token=9b40b360-8788-43ff-90c7-8d82cb9a18a5",
+        //                           "default_action": {
+        //                             "type": "web_url",
+        //                             "url": "https://js-react-todo-0002.firebaseapp.com/"
+        //                           },
+        //                           "buttons": [
+        //                             {
+        //                                 "type": "web_url",
+        //                                 "url": "https://m.me/sixbysixvote/", 
+        //                                 "title": "Talk To SixBySix"
+        //                               }
+        //                           ]
+        //                         }
+        //                       ]
+        //                     }
+        //                   }
+        //                 }
+        //               }
+        //             ]
+        //           }
+        //         ]
+        //       }
+        //     }
+        //   };
 
     } else if (received_message.attachments) {
         let attachments_url = received_message.attachments[0].payload.url;
@@ -179,4 +184,4 @@ app.get('/webhook', (req, res) => {
 
 const PORT = process.env.PORT || 1337
 
-app.listen( PORT, () => console.log(`webhook is Running on port ${PORT}`));
+app.listen( PORT, () => console.log(get_started));
