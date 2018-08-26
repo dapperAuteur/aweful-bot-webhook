@@ -6,7 +6,12 @@ const request = require('request');
 const app = express().use(bodyParser.json());
 
 const responses = require('./responses');
-let get_started = responses.GetStarted;
+// let get_started = responses.GetStarted;
+// let share = responses.Share;
+let {
+    get_started,
+    share
+} = responses;
 
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN
 const APP_ID = process.env.APP_ID
@@ -131,8 +136,8 @@ function callSendAPI(sender_psid, response) {
         "json": request_body
     }, (err, res, body) => {
         if (!err) {
-            console.log(`message sent! ${ request_body }`);
-            console.log(request_body.message);
+            console.log(`message sent!`);
+            // console.log(request_body.message);
         } else {
             console.err(`Unable to send message: ${ err }`);
         }
@@ -184,4 +189,4 @@ app.get('/webhook', (req, res) => {
 
 const PORT = process.env.PORT || 1337
 
-app.listen( PORT, () => console.log(get_started));
+app.listen( PORT, () => console.log(`webhook is Running on port ${PORT}`));
