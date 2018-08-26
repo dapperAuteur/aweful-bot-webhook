@@ -6,8 +6,7 @@ const request = require('request');
 const app = express().use(bodyParser.json());
 
 const responses = require('./responses');
-// let get_started = responses.GetStarted;
-// let share = responses.Share;
+
 let {
     get_started,
     share,
@@ -26,7 +25,7 @@ function handleMessage(sender_psid, received_message) {
 
     if (received_message.text) {
 
-        response = simple_button_url_template;
+        response = share;
 
         // response = {
         //     "attachment":{
