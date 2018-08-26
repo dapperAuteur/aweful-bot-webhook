@@ -12,7 +12,8 @@ let {
     share,
     simple_button_message,
     simple_button_url_template,
-    simple_message
+    simple_message,
+    yes_registered_to_vote
 } = responses;
 
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN
@@ -25,14 +26,20 @@ function handleMessage(sender_psid, received_message) {
     console.log("handleMessage");
 
     if (received_message.text) {
-        if (text == "Get Started") {
-            response = get_started;
-        } else if (condition) {
-            
-        } else {
-            response = {
-                "text": "Is this what you want?"
-            }
+        
+        switch (text) {
+            case "Get Started":
+                response = get_started;
+                break;
+            case "Yes!":
+                response = yes_registered_to_vote;
+                break;
+        
+            default:
+                response = {
+                    "text": "Is this what you want?"
+                }
+                break;
         }
 
 
