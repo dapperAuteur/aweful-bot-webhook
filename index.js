@@ -102,6 +102,7 @@ function handlePostback(sender_psid, received_postback) {
 
 function callSendAPI(sender_psid, response) {
     console.log("callSendAPI");
+    let responseMessage;
     let request_body;
     if (response.length > 1) {
         console.log(">1");
