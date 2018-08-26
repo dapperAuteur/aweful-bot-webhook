@@ -2,15 +2,28 @@ let get_started = {
   "attachment": {
     "type": "template",
     "payload": {
-      "template_type":"generic",
-      "elements":[
+      "template_type":"button",
+      "text": "Congrats on accepting the #sixbysix challenge! Now, Level Up! Are you registered to vote?"
+      "buttons":[
         {
-          "text": "CONGRATS on accepting the #sixbysix challenge! Now, Level Up! Are you registered to vote?"
-      }
-      ]
+            "type": "postback",
+            "title": "Yes!",
+            "payload": "yes"
+        },
+        {
+            "type": "postback",
+            "title": "No, I haven't yet",
+            "payload": "No, I haven't yet"
+        },
+        {
+            "type": "postback",
+            "title": "I don't know",
+            "payload": "I don't know"
+        }
+      ]  
     }
   }
-};
+}
 
 // let get_started = {
   // "attachment":{
