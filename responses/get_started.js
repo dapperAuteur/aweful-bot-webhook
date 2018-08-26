@@ -8,7 +8,7 @@ let get_started = {
         {
             "type": "postback",
             "title": "Yes!",
-            "payload": "yes"
+            "payload": "Yes!"
         },
         {
             "type": "postback",
