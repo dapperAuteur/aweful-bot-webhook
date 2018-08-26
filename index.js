@@ -79,11 +79,23 @@ function handlePostback(sender_psid, received_postback) {
 
     let payload = received_postback.payload;
 
-    if (payload === 'yes') {
-        response = { "text": "Thanks!" }
-    } else if (payload === 'no') {
-        response = { "text": "Oops, try sending another image." }
+    switch (payload) {
+        case "Yes!":
+            response = yes_registered_to_vote;
+            break;
+    
+        default:
+            response = {
+                "text": "Is this what you want?"
+            }
+            break;
     }
+
+    // if (payload === 'yes') {
+    //     response = { "text": "Thanks!" }
+    // } else if (payload === 'no') {
+    //     response = { "text": "Oops, try sending another image." }
+    // }
 
     callSendAPI(sender_psid, response);
 }
