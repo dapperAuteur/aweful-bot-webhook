@@ -3,7 +3,7 @@ let get_started = {
     "type": "template",
     "payload": {
       "template_type":"button",
-      "text": "Congrats on accepting the #sixbysix challenge! Now, Level Up! Are you registered to vote?"
+      "text": "Congrats on accepting the #sixbysix challenge! Now, Level Up! Are you registered to vote?",
       "buttons":[
         {
             "type": "postback",
