@@ -27,6 +27,12 @@ function handleMessage(sender_psid, received_message) {
     if (received_message.text) {
         if (text == "Get Started") {
             response = get_started;
+        } else if (condition) {
+            
+        } else {
+            response = {
+                "text": "Is this what you want?"
+            }
         }
 
 

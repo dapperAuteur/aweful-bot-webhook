@@ -5,3 +5,4 @@ exports.share = require('./share');
 exports.simple_button_message = require('./simple_button_message');
 exports.simple_button_url_template = require('./simple_button_url_template');
 exports.simple_message = require('./simple_message');
+exports.yes_registered_to_vote = require('./yes_registered_to_vote');
