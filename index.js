@@ -11,6 +11,8 @@ const responses = require('./responses');
 let {
     get_started,
     share,
+    simple_button_message,
+    simple_button_url_template,
     simple_message
 } = responses;
 
@@ -24,7 +26,7 @@ function handleMessage(sender_psid, received_message) {
 
     if (received_message.text) {
 
-        response = get_started;
+        response = simple_button_url_template;
 
         // response = {
         //     "attachment":{
@@ -188,3 +190,4 @@ app.get('/webhook', (req, res) => {
 const PORT = process.env.PORT || 1337
 
 app.listen( PORT, () => console.log(`webhook is Running on port ${PORT}`));
+// app.listen( PORT, () => console.log(responses.simple_button_message));
