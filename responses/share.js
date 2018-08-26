@@ -18,12 +18,12 @@ let share = {
                           "template_type": "generic",
                           "elements": [
                             {
-                              "title": "Share The Challenge",
+                              "title": "Take The #SixBySix Challenge",
                               "subtitle": "#SixBySix",
                               "image_url": "https://firebasestorage.googleapis.com/v0/b/js-react-todo-0002.appspot.com/o/anchorman-celebrate.gif?alt=media&token=9b40b360-8788-43ff-90c7-8d82cb9a18a5",
                               "default_action": {
                                 "type": "web_url",
-                                "url": "https://js-react-todo-0002.firebaseapp.com/"
+                                "url": "https://www.sixbysix.vote/"
                               },
                               "buttons": [
                                 {
