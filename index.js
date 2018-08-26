@@ -24,7 +24,7 @@ function handleMessage(sender_psid, received_message) {
 
     if (received_message.text) {
 
-        response = simple_message;
+        response = get_started;
 
         // response = {
         //     "attachment":{
