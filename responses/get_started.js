@@ -5,7 +5,7 @@ let get_started = {
       "template_type":"generic",
       "elements":[
         {
-          "text": "Congrats on accepting the #sixbysix challenge! Now, Level Up! Are you registered to vote?"
+          "text": "CONGRATS on accepting the #sixbysix challenge! Now, Level Up! Are you registered to vote?"
       },
       {
         "title":"#SixBySix",
