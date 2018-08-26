@@ -1,4 +1,4 @@
 exports = module.exports = {};
 
-exports.GetStarted = require('./get_started');
-exports.Share = require('./share');
+exports.get_started = require('./get_started');
+exports.share = require('./share');
