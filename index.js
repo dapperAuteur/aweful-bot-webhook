@@ -102,26 +102,57 @@ function handlePostback(sender_psid, received_postback) {
 
 function callSendAPI(sender_psid, response) {
     console.log("callSendAPI");
-    let request_body = {
-        "recipient": {
-            "id": sender_psid
-        },
-        "message": response
-    }
-
-    request({
-        "uri": "https://graph.facebook.com/v3.1/me/messages",
-        "qs": { "access_token": PAGE_ACCESS_TOKEN },
-        "method": "POST",
-        "json": request_body
-    }, (err, res, body) => {
-        if (!err) {
-            console.log(`message sent!`);
-            // console.log(request_body.message);
-        } else {
-            console.err(`Unable to send message: ${ err }`);
+    let request_body;
+    if (response.length > 1) {
+        console.log(">1");
+        response.forEach(function(responseMessage) {
+            // responseMessage = response;
+        request_body = {
+            "recipient": {
+                "id": sender_psid
+            },
+            "message": responseMessage
         }
-    });
+    
+        request({
+            "uri": "https://graph.facebook.com/v3.1/me/messages",
+            "qs": { "access_token": PAGE_ACCESS_TOKEN },
+            "method": "POST",
+            "json": request_body
+        }, (err, res, body) => {
+            if (!err) {
+                console.log(`message sent!`);
+                // console.log(request_body.message);
+            } else {
+                console.err(`Unable to send message: ${ err }`);
+            }
+         });
+        })
+    } else {
+        console.log("1");
+        responseMessage = response;
+        request_body = {
+            "recipient": {
+                "id": sender_psid
+            },
+            "message": responseMessage
+        }
+    
+        request({
+            "uri": "https://graph.facebook.com/v3.1/me/messages",
+            "qs": { "access_token": PAGE_ACCESS_TOKEN },
+            "method": "POST",
+            "json": request_body
+        }, (err, res, body) => {
+            if (!err) {
+                console.log(`message sent!`);
+                // console.log(request_body.message);
+            } else {
+                console.err(`Unable to send message: ${ err }`);
+            }
+        });
+    }
+    
 }
 
 app.post('/webhook', (req, res) => {
