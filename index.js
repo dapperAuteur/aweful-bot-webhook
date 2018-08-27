@@ -8,6 +8,7 @@ const app = express().use(bodyParser.json());
 const responses = require('./responses');
 
 let {
+    already_did,
     alright_how_do_i_get_one_2A,
     get_started,
     done_registered_in_person_1G,
@@ -15,6 +16,7 @@ let {
     i_already_did_1I,
     i_dont_have_id_1B,
     i_live_in_a_different_state_1C,
+    i_will,
     lets_do_it_share,
     mail_early_ballot_reminder,
     nah_not_right_now_1H,
@@ -25,6 +27,7 @@ let {
     register_by_mail_1D,
     register_in_person_1E,
     register_to_vote_reminder,
+    send_early_ballot_reminder_step3,
     share,
     simple_button_message,
     simple_button_url_template,
@@ -41,8 +44,7 @@ function handleReminderMessage(sender_psid) {
     let message;
     let date;
 
-
-    // send reminder on 2018-10-01
+    // send reminder on 2018-10-01, 2018-10-19, 2018-11-01, 2018-11-06
 
     if (date = "2018-10-01") {
 
@@ -50,6 +52,10 @@ function handleReminderMessage(sender_psid) {
 
     } else if (date = "2018-10-19") {
         message = mail_early_ballot_reminder;
+    } else if (date = "2018-11-01") {
+        message = send_early_ballot_reminder_step3;
+    } else if (date = "2018-11-06") {
+        message = go_to_polls_reminder;
     }
 
     callSendAPI(sender_psid, message);
@@ -68,6 +74,15 @@ function handleMessage(sender_psid, received_message) {
                 break;
             case "Yes!":
                 response = yes_registered_to_vote_1F;
+                break;
+            case "Step 2":
+                response = get_started;
+                break;
+            case "Step 3":
+                response = send_early_ballot_reminder;
+                break;
+            case "Step 4":
+                response = go_to_polls_reminder;
                 break;
         
             default:
@@ -114,6 +129,9 @@ function handlePostback(sender_psid, received_postback) {
 
     let payload = received_postback.payload;
     switch (payload) {
+        case "Already did":
+            response = already_did;
+            break;
         case "Alright, how do I get one?":
             response = alright_how_do_i_get_one_2A;
             break;
@@ -129,6 +147,9 @@ function handlePostback(sender_psid, received_postback) {
         case "I live in a different state":
             response = i_live_in_a_different_state_1C;
             break;
+        case "I will":
+                response = i_will;
+                break;
         case "Let’s do it!":
             response = lets_do_it_share;
             break;
