@@ -1,4 +1,4 @@
-let yes_registered_to_vote = [
+let yes_registered_to_vote_1F = [
     {
         "text": "🔥🔥🔥 You’re already halfway there! All that’s left now is to vote."
     },
@@ -43,5 +43,5 @@ let yes_registered_to_vote = [
   }
 ];
 
-let YesRegisteredToVote = yes_registered_to_vote;
-module.exports = YesRegisteredToVote;
+let YesRegisteredToVote1F = yes_registered_to_vote_1F;
+module.exports = YesRegisteredToVote1F;

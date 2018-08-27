@@ -9,11 +9,13 @@ const responses = require('./responses');
 
 let {
     get_started,
+    lets_do_it_share,
+    nah_not_right_now_1H,
     share,
     simple_button_message,
     simple_button_url_template,
     simple_message,
-    yes_registered_to_vote
+    yes_registered_to_vote_1F
 } = responses;
 
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN
@@ -32,7 +34,7 @@ function handleMessage(sender_psid, received_message) {
                 response = get_started;
                 break;
             case "Yes!":
-                response = yes_registered_to_vote;
+                response = yes_registered_to_vote_1F;
                 break;
         
             default:
@@ -78,10 +80,22 @@ function handlePostback(sender_psid, received_postback) {
     let response;
 
     let payload = received_postback.payload;
-
+    
     switch (payload) {
+        case "Let’s do it!":
+            response = lets_do_it_share;
+            break;
+        case "Nah, not right now":
+            response = nah_not_right_now_1H;
+            break;
         case "Yes!":
-            response = yes_registered_to_vote;
+            response = yes_registered_to_vote_1F;
+            break;
+        case "yes":
+            response = { "text": "Thanks!" };
+            break;
+        case "no":
+            response = { "text": "Oops, try sending another image." };
             break;
     
         default:
@@ -90,12 +104,6 @@ function handlePostback(sender_psid, received_postback) {
             }
             break;
     }
-
-    // if (payload === 'yes') {
-    //     response = { "text": "Thanks!" }
-    // } else if (payload === 'no') {
-    //     response = { "text": "Oops, try sending another image." }
-    // }
 
     callSendAPI(sender_psid, response);
 }
