@@ -1,6 +1,7 @@
 exports = module.exports = {};
 
 exports.get_started = require('./get_started');
+exports.i_already_did = require('./i_already_did');
 exports.lets_do_it_share = require('./lets_do_it_share');
 exports.nah_not_right_now_1H = require('./nah_not_right_now_1H');
 exports.share = require('./share');

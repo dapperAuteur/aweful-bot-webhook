@@ -9,6 +9,7 @@ const responses = require('./responses');
 
 let {
     get_started,
+    i_already_did_1I,
     lets_do_it_share,
     nah_not_right_now_1H,
     share,
@@ -82,6 +83,9 @@ function handlePostback(sender_psid, received_postback) {
     let payload = received_postback.payload;
     
     switch (payload) {
+        case "I already did":
+            response = i_already_did_1I;
+            break;
         case "Let’s do it!":
             response = lets_do_it_share;
             break;
