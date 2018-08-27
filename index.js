@@ -14,6 +14,7 @@ let {
     i_dont_have_id_1B,
     i_live_in_a_different_state_1C,
     lets_do_it_share,
+    mail_early_ballot_reminder,
     nah_not_right_now_1H,
     no_not_registered_to_vote,
     not_yet,
@@ -25,7 +26,8 @@ let {
     simple_button_message,
     simple_button_url_template,
     simple_message,
-    yes_registered_to_vote_1F
+    yes_registered_to_vote_1F,
+    yup_mail_early_ballot
 } = responses;
 
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN
@@ -43,8 +45,11 @@ function handleReminderMessage(sender_psid) {
 
         message = register_to_vote_reminder;
 
-        callSendAPI(sender_psid, message);
+    } else if (date = "2018-10-19") {
+        message = mail_early_ballot_reminder;
     }
+
+    callSendAPI(sender_psid, message);
 }
 
 function handleMessage(sender_psid, received_message) {
@@ -56,7 +61,7 @@ function handleMessage(sender_psid, received_message) {
         
         switch (text) {
             case "Get Started":
-                response = get_started;
+                response = yup_mail_early_ballot;
                 break;
             case "Yes!":
                 response = yes_registered_to_vote_1F;
@@ -154,6 +159,9 @@ function handlePostback(sender_psid, received_postback) {
             break;
         case "yes":
             response = { "text": "Thanks!" };
+            break;
+        case "Yup!":
+            response = yup_mail_early_ballot;
             break;
         case "no":
             response = { "text": "Oops, try sending another image." };
