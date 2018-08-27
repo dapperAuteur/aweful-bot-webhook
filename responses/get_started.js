@@ -1,7 +1,6 @@
 let get_started = [
   {
-    "text": "Congrats on accepting the #sixbysix challenge! Now, Level Up! Are you registered to vote?",
-    "buttons"
+    "text": "Congrats on accepting the #sixbysix challenge! Now, Level Up! Are you registered to vote?"
   },
   {
     "attachment": {
