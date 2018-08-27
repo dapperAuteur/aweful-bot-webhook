@@ -15,26 +15,26 @@ let get_started = [
             "default_action": {
                 "type": "web_url",
                 "url": "https://www.facebook.com/sixbysixvote/"
-            } 
+            },
+            "buttons":[
+              {
+                  "type": "postback",
+                  "title": "Yes!",
+                  "payload": "Yes!"
+              },
+              {
+                  "type": "postback",
+                  "title": "No, I haven't yet",
+                  "payload": "No, I haven't yet"
+              },
+              {
+                  "type": "postback",
+                  "title": "I don't know",
+                  "payload": "I don't know"
+              }
+            ] 
           }
-        ],
-        "buttons":[
-          {
-              "type": "postback",
-              "title": "Yes!",
-              "payload": "Yes!"
-          },
-          {
-              "type": "postback",
-              "title": "No, I haven't yet",
-              "payload": "No, I haven't yet"
-          },
-          {
-              "type": "postback",
-              "title": "I don't know",
-              "payload": "I don't know"
-          }
-        ]  
+        ] 
       }
     }
   }
