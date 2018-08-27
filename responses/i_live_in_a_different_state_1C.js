@@ -1,6 +1,12 @@
 let i_live_in_a_different_state_1C = [
   {
-    "text": "Ok, let me try to help you out.  Every state has slightly different rules about how to get it done,  but there’s a cool site that can help you figure that out. (Link) Click on this text and I’ll take you there (Link to https://vote.gov/)\n…\nLet me know once you’re done."
+    "text": "Ok, let me try to help you out."
+  },
+  {
+    "text": "Every state has slightly different rules about how to get it done, but there’s a cool site that can help you figure that out."
+  },
+  {
+    "text": "(Link) Click on this text and I’ll take you there (Link to https://vote.gov/)\n…\nLet me know once you’re done."
   },
   {
     "attachment": {
