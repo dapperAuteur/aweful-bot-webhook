@@ -158,6 +158,9 @@ function handlePostback(sender_psid, received_postback) {
         case "Let’s do it!":
             response = lets_do_it_share;
             break;
+        case "Nah, I’m cool":
+            
+            break;
         case "Nah, not right now":
             response = nah_not_right_now_1H;
             break;
