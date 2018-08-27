@@ -13,6 +13,7 @@ let {
     lets_do_it_share,
     nah_not_right_now_1H,
     no_not_registered_to_vote,
+    register_online_1A,
     share,
     simple_button_message,
     simple_button_url_template,
@@ -98,6 +99,12 @@ function handlePostback(sender_psid, received_postback) {
             break;
         case "I don't know":
             response = no_not_registered_to_vote;
+            break;
+        case "Register Online":
+            response = register_online_1A;
+            break;
+        case "Done!":
+            response = yes_registered_to_vote_1F;
             break;
         case "Yes!":
             response = yes_registered_to_vote_1F;
