@@ -1,4 +1,4 @@
-let mail_early_ballot_reminder = [
+let mail_early_ballot_reminder_step2 = [
     {
         "text": "Yo! Did you know that you don’t have to go out to the polls to vote? You can register for early ballot and it will be mailed right to your house!"
     },
@@ -30,5 +30,5 @@ let mail_early_ballot_reminder = [
     }
 ]
 
-let MailEarlyBallotReminder = mail_early_ballot_reminder;
-module.exports = MailEarlyBallotReminder;
+let MailEarlyBallotReminderStep2 = mail_early_ballot_reminder_step2;
+module.exports = MailEarlyBallotReminderStep2;

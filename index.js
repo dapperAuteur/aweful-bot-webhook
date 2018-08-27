@@ -18,7 +18,7 @@ let {
     i_live_in_a_different_state_1C,
     i_will,
     lets_do_it_share,
-    mail_early_ballot_reminder,
+    mail_early_ballot_reminder_step2,
     nah_not_right_now_1H,
     no_not_registered_to_vote,
     not_yet,
@@ -51,7 +51,7 @@ function handleReminderMessage(sender_psid) {
         message = register_to_vote_reminder;
 
     } else if (date = "2018-10-19") {
-        message = mail_early_ballot_reminder;
+        message = mail_early_ballot_reminder_step2;
     } else if (date = "2018-11-01") {
         message = send_early_ballot_reminder_step3;
     } else if (date = "2018-11-06") {
@@ -76,7 +76,7 @@ function handleMessage(sender_psid, received_message) {
                 response = yes_registered_to_vote_1F;
                 break;
             case "Step 2":
-                response = get_started;
+                response = mail_early_ballot_reminder_step2;
                 break;
             case "Step 3":
                 response = send_early_ballot_reminder;
