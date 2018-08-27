@@ -13,9 +13,11 @@ let {
     get_started,
     done_registered_in_person_1G,
     going_to_the_poll,
+    go_to_polls_reminder_step4,
     i_already_did_1I,
     i_dont_have_id_1B,
     i_live_in_a_different_state_1C,
+    i_voted,
     i_will,
     lets_do_it_share,
     mail_early_ballot_reminder_step2,
@@ -55,7 +57,7 @@ function handleReminderMessage(sender_psid) {
     } else if (date = "2018-11-01") {
         message = send_early_ballot_reminder_step3;
     } else if (date = "2018-11-06") {
-        message = go_to_polls_reminder;
+        message = go_to_polls_reminder_step4;
     }
 
     callSendAPI(sender_psid, message);
@@ -82,7 +84,7 @@ function handleMessage(sender_psid, received_message) {
                 response = send_early_ballot_reminder;
                 break;
             case "Step 4":
-                response = go_to_polls_reminder;
+                response = go_to_polls_reminder_step4;
                 break;
         
             default:
@@ -146,10 +148,13 @@ function handlePostback(sender_psid, received_postback) {
             break;
         case "I live in a different state":
             response = i_live_in_a_different_state_1C;
+            break;I voted!
+        case "I voted!":
+            response = i_voted;
             break;
         case "I will":
-                response = i_will;
-                break;
+            response = i_will;
+            break;
         case "Let’s do it!":
             response = lets_do_it_share;
             break;
