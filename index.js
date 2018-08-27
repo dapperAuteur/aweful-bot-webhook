@@ -16,9 +16,11 @@ let {
     lets_do_it_share,
     nah_not_right_now_1H,
     no_not_registered_to_vote,
+    not_yet,
     register_online_1A,
     register_by_mail_1D,
     register_in_person_1E,
+    register_to_vote_reminder,
     share,
     simple_button_message,
     simple_button_url_template,
@@ -29,6 +31,21 @@ let {
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN
 const APP_ID = process.env.APP_ID
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
+
+function handleReminderMessage(sender_psid) {
+    let message;
+    let date;
+
+
+    // send reminder on 2018-10-01
+
+    if (date = "2018-10-01") {
+
+        message = register_to_vote_reminder;
+
+        callSendAPI(sender_psid, message);
+    }
+}
 
 function handleMessage(sender_psid, received_message) {
     let response;
@@ -111,6 +128,9 @@ function handlePostback(sender_psid, received_postback) {
         case "I don't know":
             response = no_not_registered_to_vote;
             break;
+        case "Not Yet":
+            response = not_yet;
+            break;
         case "Register by mail":
             response = register_by_mail_1D;
             break;
@@ -124,6 +144,9 @@ function handlePostback(sender_psid, received_postback) {
             response = done_registered_in_person_1G;
             break;
         case "Done!":
+            response = yes_registered_to_vote_1F;
+            break;
+        case "I’m all set":
             response = yes_registered_to_vote_1F;
             break;
         case "Yes!":
