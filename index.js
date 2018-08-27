@@ -81,7 +81,7 @@ function handleMessage(sender_psid, received_message) {
                 response = mail_early_ballot_reminder_step2;
                 break;
             case "Step 3":
-                response = send_early_ballot_reminder;
+                response = send_early_ballot_reminder_step3;
                 break;
             case "Step 4":
                 response = go_to_polls_reminder_step4;
