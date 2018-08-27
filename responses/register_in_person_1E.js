@@ -17,8 +17,8 @@ let register_in_person_1E = [
                 "buttons":[
                     {
                         "type": "postback",
-                        "title": "Done!",
-                        "payload": "Done!"
+                        "title": "Done",
+                        "payload": "Done"
                     }
                 ]  
             }

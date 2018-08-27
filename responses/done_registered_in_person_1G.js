@@ -1,9 +1,9 @@
-let yes_registered_to_vote_1F = [
+let done_registered_in_person_1G = [
     {
-        "text": "🔥🔥🔥 You’re already halfway there! All that’s left now is to vote."
+        "text": "Great! I know life can get hectic, so I’ll message you again a few days to remind you to go register so you can keep leveling up."
     },
     {
-        "text": "I’ll message you a reminder when we get closer… you know, ‘cause I’m a good friend like that. Now, why don’t you level up again by challenging six of your friends to take the #sixbysix challenge along with you?"
+        "text": "In the meantime, why don’t you challenge six of your friends to take the #sixbysix challenge along with you?"
     },
     {
         "attachment":{
@@ -12,9 +12,9 @@ let yes_registered_to_vote_1F = [
                 "template_type":"generic",
                 "elements":[
                     {
-                        "title":"You're doing amazing sweetie",
+                        "title":"#SixBySix Challenge",
                         "subtitle":"SixBySix Fb Page",
-                        "image_url":"https://firebasestorage.googleapis.com/v0/b/js-react-todo-0002.appspot.com/o/youre_doing_great_kard.gif?alt=media&token=d789be1c-fcc9-45fc-a7a0-57cab22ebf92",
+                        "image_url":"https://firebasestorage.googleapis.com/v0/b/js-react-todo-0002.appspot.com/o/office_michael_wink.gif?alt=media&token=3b86e987-76d4-430e-96e2-15ca9a6d240c",
                         "default_action": {
                             "type": "web_url",
                             "url": "https://www.facebook.com/sixbysixvote/"
@@ -29,11 +29,6 @@ let yes_registered_to_vote_1F = [
                                 "type": "postback",
                                 "title": "Nah, not right now",
                                 "payload": "Nah, not right now"
-                            },
-                            {
-                                "type": "postback",
-                                "title": "I already did",
-                                "payload": "I already did"
                             }
                         ]  
                     }
@@ -43,5 +38,5 @@ let yes_registered_to_vote_1F = [
   }
 ];
 
-let YesRegisteredToVote1F = yes_registered_to_vote_1F;
-module.exports = YesRegisteredToVote1F;
+let DoneRegisteredInPerson1G = done_registered_in_person_1G;
+module.exports = DoneRegisteredInPerson1G;

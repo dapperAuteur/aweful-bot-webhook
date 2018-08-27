@@ -9,6 +9,7 @@ const responses = require('./responses');
 
 let {
     get_started,
+    done_registered_in_person_1G,
     i_already_did_1I,
     i_dont_have_id_1B,
     i_live_in_a_different_state_1C,
@@ -118,6 +119,9 @@ function handlePostback(sender_psid, received_postback) {
             break;
         case "Register Online":
             response = register_online_1A;
+            break;
+        case "Done":
+            response = done_registered_in_person_1G;
             break;
         case "Done!":
             response = yes_registered_to_vote_1F;

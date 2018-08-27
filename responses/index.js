@@ -1,6 +1,7 @@
 exports = module.exports = {};
 
 exports.get_started = require('./get_started');
+exports.done_registered_in_person_1G = require('./done_registered_in_person_1G');
 exports.i_already_did_1I = require('./i_already_did_1I');
 exports.i_dont_have_id_1B = require('./i_dont_have_id_1B');
 exports.i_live_in_a_different_state_1C = require('./i_live_in_a_different_state_1C');
