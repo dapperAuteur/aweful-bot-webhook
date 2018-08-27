@@ -8,8 +8,10 @@ const app = express().use(bodyParser.json());
 const responses = require('./responses');
 
 let {
+    alright_how_do_i_get_one_2A,
     get_started,
     done_registered_in_person_1G,
+    going_to_the_poll,
     i_already_did_1I,
     i_dont_have_id_1B,
     i_live_in_a_different_state_1C,
@@ -18,6 +20,7 @@ let {
     nah_not_right_now_1H,
     no_not_registered_to_vote,
     not_yet,
+    not_yet_registered_for_early_ballot,
     register_online_1A,
     register_by_mail_1D,
     register_in_person_1E,
@@ -61,7 +64,7 @@ function handleMessage(sender_psid, received_message) {
         
         switch (text) {
             case "Get Started":
-                response = yup_mail_early_ballot;
+                response = get_started;
                 break;
             case "Yes!":
                 response = yes_registered_to_vote_1F;
@@ -110,8 +113,13 @@ function handlePostback(sender_psid, received_postback) {
     let response;
 
     let payload = received_postback.payload;
-    
     switch (payload) {
+        case "Alright, how do I get one?":
+            response = alright_how_do_i_get_one_2A;
+            break;
+        case "Going to the poll":
+            response = going_to_the_poll;
+            break;
         case "I already did":
             response = i_already_did_1I;
             break;
@@ -135,6 +143,9 @@ function handlePostback(sender_psid, received_postback) {
             break;
         case "Not Yet":
             response = not_yet;
+            break;
+        case "Not Yet.":
+            response = not_yet_registered_for_early_ballot;
             break;
         case "Register by mail":
             response = register_by_mail_1D;

@@ -1,7 +1,9 @@
 exports = module.exports = {};
 
+exports.alright_how_do_i_get_one_2A = require('./alright_how_do_i_get_one_2A');
 exports.get_started = require('./get_started');
 exports.done_registered_in_person_1G = require('./done_registered_in_person_1G');
+exports.going_to_the_poll = require('./going_to_the_poll');
 exports.i_already_did_1I = require('./i_already_did_1I');
 exports.i_dont_have_id_1B = require('./i_dont_have_id_1B');
 exports.i_live_in_a_different_state_1C = require('./i_live_in_a_different_state_1C');
@@ -10,6 +12,7 @@ exports.mail_early_ballot_reminder = require('./mail_early_ballot_reminder');
 exports.nah_not_right_now_1H = require('./nah_not_right_now_1H');
 exports.no_not_registered_to_vote = require('./no_not_registered_to_vote');
 exports.not_yet = require('./not_yet');
+exports.not_yet_registered_for_early_ballot = require('./not_yet_registered_for_early_ballot');
 exports.register_by_mail_1D = require('./register_by_mail_1D');
 exports.register_in_person_1E = require('./register_in_person_1E');
 exports.register_online_1A = require('./register_online_1A');
