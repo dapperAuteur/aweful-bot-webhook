@@ -15,6 +15,8 @@ let {
     nah_not_right_now_1H,
     no_not_registered_to_vote,
     register_online_1A,
+    register_by_mail_1D,
+    register_in_person_1E,
     share,
     simple_button_message,
     simple_button_url_template,
@@ -103,6 +105,12 @@ function handlePostback(sender_psid, received_postback) {
             break;
         case "I don't know":
             response = no_not_registered_to_vote;
+            break;
+        case "Register by mail":
+            response = register_by_mail_1D;
+            break;
+        case "Register in person":
+            response = register_in_person_1E;
             break;
         case "Register Online":
             response = register_online_1A;
