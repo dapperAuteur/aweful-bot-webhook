@@ -10,6 +10,7 @@ const responses = require('./responses');
 let {
     get_started,
     i_already_did_1I,
+    i_dont_have_id_1B,
     lets_do_it_share,
     nah_not_right_now_1H,
     no_not_registered_to_vote,
@@ -87,6 +88,9 @@ function handlePostback(sender_psid, received_postback) {
     switch (payload) {
         case "I already did":
             response = i_already_did_1I;
+            break;
+        case "I don’t have an AZ Driver License or ID":
+            response = i_dont_have_id_1B;
             break;
         case "Let’s do it!":
             response = lets_do_it_share;
