@@ -11,7 +11,7 @@ let get_started = [
           {
             "title":"#SixBySix Challenge Accepted",
             "subtitle":"SixBySix Fb Page",
-            "image_url":"https://firebasestorage.googleapis.com/v0/b/js-react-todo-0002.appspot.com/o/challengeAccepted.png?alt=media&token=57d4fc02-73fb-4b9b-b2b2-c32ebc686e85",
+            "image_url":"https://firebasestorage.googleapis.com/v0/b/js-react-todo-0002.appspot.com/o/Accepted_Six_By_Six.png?alt=media&token=4169c559-642c-4be3-9576-442ecc27750b",
             "default_action": {
                 "type": "web_url",
                 "url": "https://www.facebook.com/sixbysixvote/"
