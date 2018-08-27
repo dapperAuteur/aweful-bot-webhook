@@ -93,7 +93,7 @@ function handlePostback(sender_psid, received_postback) {
         case "Nah, not right now":
             response = nah_not_right_now_1H;
             break;
-        case "No, I haven't":
+        case "No, I haven't yet":
             response = no_not_registered_to_vote;
             break;
         case "I don't know":
