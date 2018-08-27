@@ -148,7 +148,7 @@ function handlePostback(sender_psid, received_postback) {
             break;
         case "I live in a different state":
             response = i_live_in_a_different_state_1C;
-            break;I voted!
+            break;
         case "I voted!":
             response = i_voted;
             break;
