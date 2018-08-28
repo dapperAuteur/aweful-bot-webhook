@@ -88,6 +88,7 @@ function handleMessage(sender_psid, received_message) {
                         first_name = body.first_name;
                         user_id = body.id;
                         console.log(first_name, user_id);
+                        console.log(body.first_name, body.id);
                     } else {
                         console.err(`Unable to send message: ${ err }`);
                     }
