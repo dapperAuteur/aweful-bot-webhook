@@ -46,6 +46,11 @@
             }(document, 'script', 'facebook-jssdk'));
         
         function statusChangeCallback(response) {
+          console.log(response);
+
+          // check if user is in db
+          // if true respond with name, friends, stage in challenge
+          // if false get name and friends and add to db
           /*
             response = {
               status: 'connected',
