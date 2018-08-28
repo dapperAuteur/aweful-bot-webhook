@@ -5,6 +5,8 @@ const bodyParser = require('body-parser')
 const request = require('request');
 const app = express().use(bodyParser.json());
 
+app.use(express.static(__dirname + '/views'));
+
 const responses = require('./responses');
 
 let {
@@ -338,7 +340,10 @@ app.get('/webhook', (req, res) => {
     }
 });
 
+app.get('/', function (req, res) {
+    res.sendFile("index.html");
+});
+
 const PORT = process.env.PORT || 1337
 
 app.listen( PORT, () => console.log(`webhook is Running on port ${PORT}`));
-// app.listen( PORT, () => console.log(responses.simple_button_message));
