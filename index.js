@@ -64,6 +64,8 @@ function handleReminderMessage(sender_psid) {
 }
 
 function handleMessage(sender_psid, received_message) {
+    let first_name;
+    let user_id;
     let response;
     let text = received_message.text;
     console.log("handleMessage");
@@ -83,6 +85,9 @@ function handleMessage(sender_psid, received_message) {
                         console.log(res.body);
                         console.log("body");
                         console.log(body);
+                        first_name = body.first_name;
+                        user_id = body.id;
+                        console.log(first_name, user_id);
                     } else {
                         console.err(`Unable to send message: ${ err }`);
                     }
