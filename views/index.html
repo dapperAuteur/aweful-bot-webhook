@@ -2,17 +2,17 @@
 <html>
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-10207332-27"></script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-10207332-27"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'UA-10207332-27');
-  </script>
+  </script> -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SixBySix</title>
+  <title>TheBetterRobot</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,7 +23,7 @@
     <script>
         window.fbAsyncInit = function() {
             FB.init({
-            appId      : '548140405619645', // 1645178768938930 old appId that Awe Ful created
+            appId      : '369191820286664',
             cookie     : true,
             xfbml      : true,
             version    : 'v3.1'
@@ -41,7 +41,7 @@
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) {return;}
             js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=548140405619645&autoLogAppEvents=1";
+            js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=369191820286664&autoLogAppEvents=1";
             fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
         
@@ -106,18 +106,27 @@
         console.log("the Messenger Extensions JS SDK is done loading");
         };
     </script>
-    
+    <!-- Load Facebook SDK for JavaScript -->
+    <!-- <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script> -->
 
     <!-- Your customer chat code -->
     <div class="fb-customerchat"
-        attribution=install_email
-        page_id="1859439217470688"
-        logged_in_greeting="Congrats on accepting the #sixbysix challenge! Are you registered to vote?"
-        logged_out_greeting="Hi! Would you like to accept the #sixbysix challenge. Login using Facebook!">
+      attribution=setup_tool
+      page_id="249017771961496"
+      theme_color="#000000"
+      logged_in_greeting="What's up? I'm TheBetterRobot."
+      logged_out_greeting="What's up? I'm TheBetterRobot.">
     </div>
   <!-- Forked from a template on Tutorialzine: https://tutorialzine.com/2016/06/freebie-landing-page-template-with-flexbox -->
   <header>
-    <h2><a href="/">SixBySix</a></h2>
+    <h2><a href="/">TheBetterRobot</a></h2>
     <nav>
       <li><a href="/privacy-policy.html">Privacy Policy</a></li>
       <li><a href="/terms-of-service.html">Terms of Service</a></li>
@@ -129,7 +138,7 @@
   <section class="hero">
     <div class="background-image" style="background-image: url(assets/img/main.jpg);"></div>
     <div class="hero-content-area">
-      <h1>SixBySix Challenge</h1>
+      <h1>TheBetterRobot</h1>
       <h3>Share To Change Your World</h3>
         <fb:login-button
             class="fb-login-button"
