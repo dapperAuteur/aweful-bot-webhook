@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const request = require('request');
 const app = express().use(bodyParser.json());
 
+app.use(express.static(__dirname + '/views/assets/css'));
 app.use(express.static(__dirname + '/views'));
 
 const responses = require('./responses');
