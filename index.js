@@ -128,7 +128,7 @@ function handleMessage(sender_psid, received_message) {
         
             default:
                 response = {
-                    "text": "I have a limited amount of responses. I'm getting smarter tho'."
+                    "text": "I have a limited amount of responses. I'm getting smarter tho'. I'll tell Anthony what you said and he'll get back to you."
                 }
                 break;
         }
