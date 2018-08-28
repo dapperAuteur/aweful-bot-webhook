@@ -77,25 +77,25 @@ function handleMessage(sender_psid, received_message) {
         
         switch (text) {
             case "Get Started":
-                request({
-                    "uri": "https://graph.facebook.com/me?fields=id,first_name",
-                    "qs": { "access_token": "EAADhIbhUZBjIBAC4DpnM6HuY5BWoKODRNFK7K4meZB9QEHocOOu2uCaS0VsZC8Cq8k04hZBB3u3paidP2YtYpUSzxyJ6qvKd6KZAIFwkQJbOaIYeZB0V29T5G6YXwmjZCLgVZC3Iv4oAduRB4dZBdIoeww7I6vaiylVRdSDZAR2NbchlzGsgPAykaZBL8SPGT4ZBF3kdP1xRZCcmFyQZDZD" },
-                    "method": "GET"
-                }, (err, res, body) => {
-                    if (!err) {
-                        console.log(`message sent!`);
-                        console.log("res.body");
-                        console.log(res.body);
-                        console.log("body");
-                        console.log(body);
-                        first_name = body["first_name"];
-                        user_id = body["id"];
-                        console.log(first_name, user_id);
-                        console.log(body["first_name"], body["id"]);
-                    } else {
-                        console.err(`Unable to send message: ${ err }`);
-                    }
-                });
+                // request({
+                //     "uri": "https://graph.facebook.com/me?fields=id,first_name",
+                //     "qs": { "access_token": VERIFY_TOKEN },
+                //     "method": "GET"
+                // }, (err, res, body) => {
+                //     if (!err) {
+                //         console.log(`message sent!`);
+                //         console.log("res.body");
+                //         console.log(res.body);
+                //         console.log("body");
+                //         console.log(body);
+                //         first_name = body["first_name"];
+                //         user_id = body["id"];
+                //         console.log(first_name, user_id);
+                //         console.log(body["first_name"], body["id"]);
+                //     } else {
+                //         console.err(`Unable to send message: ${ err }`);
+                //     }
+                // });
                 response = get_started;
                 break;
             case "Yes!":
@@ -110,10 +110,25 @@ function handleMessage(sender_psid, received_message) {
             case "Step 4":
                 response = go_to_polls_reminder_step4;
                 break;
+                case "when are you streaming next?":
+                response = {
+                    "text": "I don't have a time scheduled yet. I'll send out a message soon tho'"
+                };
+                break;
+            case "help":
+                response = {
+                    "text": "What would you like help with?"
+                };
+                break;
+            case "menu":
+                response = {
+                    "text": "I don't have a menu, yet. Are you hungry? Anthony is always hungry."
+                };
+                break;
         
             default:
                 response = {
-                    "text": "Is this what you want?"
+                    "text": "I have a limited amount of responses. I'm getting smarter tho'."
                 }
                 break;
         }
