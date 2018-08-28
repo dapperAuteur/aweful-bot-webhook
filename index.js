@@ -110,7 +110,7 @@ function handleMessage(sender_psid, received_message) {
             case "Step 4":
                 response = go_to_polls_reminder_step4;
                 break;
-                case "when are you streaming next?":
+            case "when are you streaming next?":
                 response = {
                     "text": "I don't have a time scheduled yet. I'll send out a message soon tho'"
                 };
