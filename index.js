@@ -85,8 +85,8 @@ function handleMessage(sender_psid, received_message) {
                         console.log(res.body);
                         console.log("body");
                         console.log(body);
-                        first_name = body[first_name];
-                        user_id = body[id];
+                        first_name = body["first_name"];
+                        user_id = body["id"];
                         console.log(first_name, user_id);
                         console.log(body[first_name], body[id]);
                     } else {
