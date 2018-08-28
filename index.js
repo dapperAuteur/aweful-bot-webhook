@@ -72,6 +72,21 @@ function handleMessage(sender_psid, received_message) {
         
         switch (text) {
             case "Get Started":
+                request({
+                    "uri": "https://graph.facebook.com/me?fields=id,first_name",
+                    "qs": { "access_token": USER_ACCESS_TOKEN },
+                    "method": "GET"
+                }, (err, res, body) => {
+                    if (!err) {
+                        console.log(`message sent!`);
+                        console.log("res.body");
+                        console.log(res.body);
+                        console.log("body");
+                        console.log(body);
+                    } else {
+                        console.err(`Unable to send message: ${ err }`);
+                    }
+                });
                 response = get_started;
                 break;
             case "Yes!":
