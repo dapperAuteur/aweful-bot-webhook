@@ -74,7 +74,7 @@ function handleMessage(sender_psid, received_message) {
             case "Get Started":
                 request({
                     "uri": "https://graph.facebook.com/me?fields=id,first_name",
-                    "qs": { "access_token": USER_ACCESS_TOKEN },
+                    "qs": { "access_token": "EAADhIbhUZBjIBAC4DpnM6HuY5BWoKODRNFK7K4meZB9QEHocOOu2uCaS0VsZC8Cq8k04hZBB3u3paidP2YtYpUSzxyJ6qvKd6KZAIFwkQJbOaIYeZB0V29T5G6YXwmjZCLgVZC3Iv4oAduRB4dZBdIoeww7I6vaiylVRdSDZAR2NbchlzGsgPAykaZBL8SPGT4ZBF3kdP1xRZCcmFyQZDZD" },
                     "method": "GET"
                 }, (err, res, body) => {
                     if (!err) {
