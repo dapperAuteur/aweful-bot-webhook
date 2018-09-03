@@ -1,4 +1,4 @@
-let already_did = [
+let already_did_step_3 = [
   {
     "text": "*Sigh of relief* Good."
   },
@@ -14,7 +14,7 @@ let already_did = [
             "image_url":"https://firebasestorage.googleapis.com/v0/b/js-react-todo-0002.appspot.com/o/drake-you_da_best.gif?alt=media&token=cbb9adc7-3d05-4909-b286-c2bcf2cb87f7",
             "default_action": {
                 "type": "web_url",
-                "url": "https://www.facebook.com/sixbysixvote/"
+                "url": "https://m.me/sixbysixvote/"
             }
           }
         ] 
@@ -23,5 +23,5 @@ let already_did = [
   }
 ]
 
-let AlreadyDid = already_did;
-module.exports = AlreadyDid;
+let AlreadyDidStep3 = already_did_step_3;
+module.exports = AlreadyDidStep3;

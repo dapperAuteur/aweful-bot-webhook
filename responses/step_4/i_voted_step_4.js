@@ -1,4 +1,4 @@
-let i_voted = [
+let i_voted_step_4 = [
     {
         "attachment": {
             "type": "template",
@@ -11,7 +11,7 @@ let i_voted = [
                         "image_url":"https://firebasestorage.googleapis.com/v0/b/js-react-todo-0002.appspot.com/o/antm_youre_a_real_one.gif?alt=media&token=9058a884-8941-47be-9e6c-b97cc32747d6",
                         "default_action": {
                             "type": "web_url",
-                            "url": "https://www.facebook.com/sixbysixvote/"
+                            "url": "https://m.me/sixbysixvote/"
                         }
                     }
                 ]
@@ -48,5 +48,5 @@ let i_voted = [
     }
 ]
 
-let IVoted = i_voted;
-module.exports = IVoted;
+let IVotedStep4 = i_voted_step_4;
+module.exports = IVotedStep4;

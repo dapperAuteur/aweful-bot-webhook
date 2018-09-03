@@ -1,4 +1,4 @@
-let yup_mail_early_ballot = [
+let yup_mail_early_ballot_step_2 = [
   {
     "text": "I knew there was a reason I liked you 😛. Alright cool."
   },
@@ -14,7 +14,7 @@ let yup_mail_early_ballot = [
             "image_url":"https://firebasestorage.googleapis.com/v0/b/js-react-todo-0002.appspot.com/o/thanks_dj_khalid.gif?alt=media&token=3dda393f-8fbb-4fe5-bd4e-3bb77743b1ff",
             "default_action": {
                 "type": "web_url",
-                "url": "https://www.facebook.com/sixbysixvote/"
+                "url": "https://m.me/sixbysixvote/"
             }
           }
         ] 
@@ -26,5 +26,5 @@ let yup_mail_early_ballot = [
   }
 ]
 
-let YupMailEarlyBallot = yup_mail_early_ballot;
-module.exports = YupMailEarlyBallot;
+let YupMailEarlyBallotStep2 = yup_mail_early_ballot_step_2;
+module.exports = YupMailEarlyBallotStep2;

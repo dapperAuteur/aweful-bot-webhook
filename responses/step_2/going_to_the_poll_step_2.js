@@ -1,4 +1,4 @@
-let going_to_the_poll = [
+let going_to_the_poll_step_2 = [
     {
         "text": "Alright. Then I’ll remind you when we get closer to November 6th."
     },
@@ -7,5 +7,5 @@ let going_to_the_poll = [
     }
 ]
 
-let GoingToThePoll = going_to_the_poll;
-module.exports = GoingToThePoll;
+let GoingToThePollStep2 = going_to_the_poll_step_2;
+module.exports = GoingToThePollStep2;

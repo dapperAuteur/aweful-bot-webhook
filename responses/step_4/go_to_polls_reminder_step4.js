@@ -30,7 +30,7 @@ let go_to_polls_reminder_step4 = [
                         "image_url":"https://firebasestorage.googleapis.com/v0/b/js-react-todo-0002.appspot.com/o/misha_collins-ill_wait_here.gif?alt=media&token=3d8110d9-824d-4eaa-8d1f-332c7c328883",
                         "default_action": {
                             "type": "web_url",
-                            "url": "https://www.facebook.com/sixbysixvote/"
+                            "url": "https://m.me/sixbysixvote/"
                         },
                         "buttons":[
                             {

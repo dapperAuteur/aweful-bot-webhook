@@ -1,4 +1,4 @@
-let i_will = [
+let i_will_step_3 = [
   {
     "text": "Okay, I’m counting on you."
   },
@@ -14,7 +14,7 @@ let i_will = [
             "image_url":"https://firebasestorage.googleapis.com/v0/b/js-react-todo-0002.appspot.com/o/shai-do_it.gif?alt=media&token=aee8a3fc-38da-4733-8ca3-28f87c4bbdde",
             "default_action": {
                 "type": "web_url",
-                "url": "https://www.facebook.com/sixbysixvote/"
+                "url": "https://m.me/sixbysixvote/"
             }
           }
         ] 
@@ -23,5 +23,5 @@ let i_will = [
   }
 ]
 
-let IWill = i_will;
-module.exports = IWill;
+let IWillStep3 = i_will_step_3;
+module.exports = IWillStep3;

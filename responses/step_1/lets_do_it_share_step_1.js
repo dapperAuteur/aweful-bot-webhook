@@ -1,4 +1,4 @@
-let lets_do_it_share = {
+let lets_do_it_share_step_1 = {
         "attachment":{
           "type":"template",
           "payload":{
@@ -20,16 +20,16 @@ let lets_do_it_share = {
                             {
                               "title": "Take The #SixBySix Challenge",
                               "subtitle": "#SixBySix",
-                              "image_url": "https://firebasestorage.googleapis.com/v0/b/js-react-todo-0002.appspot.com/o/Accepted_Six_By_Six.png?alt=media&token=4169c559-642c-4be3-9576-442ecc27750b",
+                              "image_url": "https://firebasestorage.googleapis.com/v0/b/js-react-todo-0002.appspot.com/o/CHALLENGED.png?alt=media&token=8de3cf8d-93c1-4f37-9673-8a5a6e98f034",
                               "default_action": {
                                 "type": "web_url",
-                                "url": "https://www.sixbysix.vote/"
+                                "url": "https://m.me/sixbysixvote/"
                               },
                               "buttons": [
                                 {
                                     "type": "web_url",
                                     "url": "https://m.me/sixbysixvote/", 
-                                    "title": "Talk To SixBySix"
+                                    "title": "Accept the Challenge"
                                   }
                               ]
                             }
@@ -45,5 +45,5 @@ let lets_do_it_share = {
         }
       };
 
-let LetsDoItShare = lets_do_it_share;
-module.exports = LetsDoItShare;
+let LetsDoItShareStep1 = lets_do_it_share_step_1;
+module.exports = LetsDoItShareStep1;

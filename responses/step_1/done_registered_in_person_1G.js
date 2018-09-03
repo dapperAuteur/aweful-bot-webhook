@@ -17,7 +17,7 @@ let done_registered_in_person_1G = [
                         "image_url":"https://firebasestorage.googleapis.com/v0/b/js-react-todo-0002.appspot.com/o/office_michael_wink.gif?alt=media&token=3b86e987-76d4-430e-96e2-15ca9a6d240c",
                         "default_action": {
                             "type": "web_url",
-                            "url": "https://www.facebook.com/sixbysixvote/"
+                            "url": "https://m.me/sixbysixvote/"
                         },
                         "buttons":[
                             {

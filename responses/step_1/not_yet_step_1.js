@@ -1,4 +1,4 @@
-let not_yet = [
+let not_yet_step_1 = [
     {
         "text": "No problem.  As long as you’re a U.S. Citizen, a resident of Arizona, and over 18 years old, you can register real quick online."
     },
@@ -30,5 +30,5 @@ let not_yet = [
     }
 ]
 
-let NotYet = not_yet;
-module.exports = NotYet;
+let NotYetStep1 = not_yet_step_1;
+module.exports = NotYetStep1;

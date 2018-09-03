@@ -1,4 +1,4 @@
-let register_to_vote_reminder = [
+let register_to_vote_reminder_step_1 = [
     {
         "text": "Hey! I wanted to check back in and make sure you finished registering to vote.  The deadline is October 9th.  Did you have a chance to get it done?"
     },
@@ -25,5 +25,5 @@ let register_to_vote_reminder = [
     }
 ]
 
-let RegisterToVoteReminder = register_to_vote_reminder;
-module.exports = RegisterToVoteReminder;
+let RegisterToVoteReminderStep1 = register_to_vote_reminder_step_1;
+module.exports = RegisterToVoteReminderStep1;

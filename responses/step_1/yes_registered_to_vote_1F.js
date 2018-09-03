@@ -17,7 +17,7 @@ let yes_registered_to_vote_1F = [
                         "image_url":"https://firebasestorage.googleapis.com/v0/b/js-react-todo-0002.appspot.com/o/youre_doing_great_kard.gif?alt=media&token=d789be1c-fcc9-45fc-a7a0-57cab22ebf92",
                         "default_action": {
                             "type": "web_url",
-                            "url": "https://www.facebook.com/sixbysixvote/"
+                            "url": "https://m.me/sixbysixvote/"
                         },
                         "buttons":[
                             {
