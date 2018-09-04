@@ -19,10 +19,10 @@
   <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
 </head>
 <body>
-    <div id="fb-root"></div>
     <script>
       function statusChangeCallback(response) {
-          console.log(response);
+        console.log('statusChangeCallback');
+        console.log(response);
 
           // check if user is in db
           // if true respond with name, friends, stage in challenge
@@ -41,6 +41,8 @@
             if (response.status === 'connected') {
                 console.log('Logged in & authenticated');
                 console.log(response);
+                console.log("testApi");
+                testAPI();
                 let currentUserId = response.authResponse.userID;
                 let currentUserAccessToken = response.authResponse.accessToken;
                 // make call to friends and get user data
@@ -81,7 +83,7 @@
             version    : 'v3.1'
             });
             
-            // FB.AppEvents.logPageView(); 
+            FB.AppEvents.logPageView(); 
             FB.getLoginStatus(function(response) {
             statusChangeCallback(response);
           });   
@@ -99,13 +101,22 @@
     //     // the Messenger Extensions JS SDK is done loading
     //     console.log("the Messenger Extensions JS SDK is done loading");
     //     };
+
+    // latest version before the version showing
+      // (function(d, s, id){
+      //   var js, fjs = d.getElementsByTagName(s)[0];
+      //   if (d.getElementById(id)) {return;}
+      //   js = d.createElement(s); js.id = id;
+      //   js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=369191820286664&autoLogAppEvents=1";
+      //   fjs.parentNode.insertBefore(js, fjs);
+      //   }(document, 'script', 'facebook-jssdk'));
       (function(d, s, id){
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) {return;}
         js = d.createElement(s); js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=369191820286664&autoLogAppEvents=1";
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
+      }(document, 'script', 'facebook-jssdk'));
     </script>
 
     <!-- Your customer chat code -->
@@ -133,6 +144,7 @@
       <h1>TheBetterRobot</h1>
       <h3>Share To Change Your World</h3>
       <div id="status"></div>
+      <div id="fb-root"></div>
         <fb:login-button
             class="fb-login-button"
             data-max-rows="1" data-size="large"
@@ -143,6 +155,12 @@
             scope="public_profile, email, first_name, last_name"
             onlogin="checkLoginState();">
         </fb:login-button>
+    </div>
+    <div
+      class="fb-like"
+      data-share="true"
+      data-width="450"
+      data-show-faces="true">
     </div>
   </section>
   
