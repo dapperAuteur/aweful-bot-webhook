@@ -1,4 +1,4 @@
-let webview_the_better_robot_step_1 = [
+let webview_six_by_six_step_1 = [
   {
     "text": "To start the SixBySix Challenge you must sign in to the SixBySix app with Facebook."
   },
@@ -18,21 +18,21 @@ let webview_the_better_robot_step_1 = [
             buttons:[
               {
                 type: 'web_url',
-                url: "https://quiet-dusk-11231.herokuapp.com/",
+                url: "https://lit-anchorage-94924.herokuapp.com/",
                 title: 'Webview (compact)',
                 messenger_extensions: true,
                 webview_height_ratio: 'compact' // Small view
               },
               {
                 type: 'web_url',
-                url: "https://quiet-dusk-11231.herokuapp.com/",
+                url: "https://lit-anchorage-94924.herokuapp.com/",
                 title: 'Webview (tall)',
                 messenger_extensions: true,
                 webview_height_ratio: 'tall' // Medium view
               },
               {
                 type: 'web_url',
-                url: "https://quiet-dusk-11231.herokuapp.com/",
+                url: "https://lit-anchorage-94924.herokuapp.com/",
                 title: 'Webview (full)',
                 messenger_extensions: true,
                 webview_height_ratio: 'full' // large view
@@ -45,5 +45,5 @@ let webview_the_better_robot_step_1 = [
   }
 ]
 
-let WebviewTheBetterRobotStep1 = webview_the_better_robot_step_1;
-module.exports = WebviewTheBetterRobotStep1;
+let WebviewSixBySixStep1 = webview_six_by_six_step_1;
+module.exports = WebviewSixBySixStep1;

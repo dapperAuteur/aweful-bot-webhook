@@ -3,11 +3,12 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request');
+// const fetch = require('node-fetch');
 const app = express().use(bodyParser.json());
 const API_URL = "https://lit-anchorage-94924.herokuapp.com/api/ver0001";
 // import CRUD functions
-let challenger;
-let attachment;
+let challenger = {};
+let attachment = {};
 
 let db = require("./models");
 let challengerRoutes = require("./routes/challengers");
@@ -47,6 +48,7 @@ let {
     // default
     default_response,
     // step 1
+    accept_the_challenge_step_1,
     get_started_step_1,
     done_registered_in_person_1G,
     i_do_not_know_step_1,
@@ -99,6 +101,63 @@ const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 const APP_ID = process.env.APP_ID;
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
+function createChallenger(sender_psid) {
+  let senderPSID = { senderPSID: sender_psid };
+  console.log("createChallenger");
+  request({
+    "uri": `${API_URL}/challengers/`,
+    // "qs": { "access_token": PAGE_ACCESS_TOKEN },
+    "method": "POST",
+    "json": senderPSID
+    }, (err, res, body) => {
+        if (!err) {
+            console.log(`res`);
+            console.log(typeof body);
+            let typeOfBody = typeof body;
+            console.log(`typeOfBody is ${typeOfBody}`);
+            let bodyObj = JSON.parse(body);
+            console.log(typeof bodyObj);
+            console.log("done body");
+            // console.log(bodyObj[0]);
+            challenger = bodyObj[0];
+            let typeOfChallenger = typeof challenger;
+            console.log(`typeOfChallenger is ${typeOfChallenger}`);
+            console.log(typeof challenger);
+            console.log("after res");
+        } else {
+            console.err(`Unable to send message: ${ err }`);
+        }
+    });
+  // return fetch(`${API_URL}/challengers`, {
+  //   method: 'post',
+  //   headers: new Headers({
+  //     'Content-Type': 'application/json',
+  //     'Authorization': null,
+  //     'Role': null
+  //   }),
+  //   body: JSON.stringify({ senderPSID: sender_psid })
+  // })
+  //   .then(resp => {
+  //     console.log("resp");
+  //     if (!resp.ok) {
+  //       if (resp.status >= 400 && resp.status < 500) {
+  //         return resp.json().then(data => {
+  //           let error = { errorMessage: data.message }
+  //           throw error;
+  //         });
+  //       } else {
+  //         let error = { errorMessage: 'Please Try Again Later. Server Is NOT Responding.' }
+  //         throw error;
+  //       }
+  //     }
+  //     return resp.json();
+  //   })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //       return error;
+  //     })
+}
+
 function handleReminderMessage(sender_psid) {
     let message;
     let date;
@@ -123,13 +182,7 @@ function handleReminderMessage(sender_psid) {
 function handleMessage(sender_psid, received_message) {
     // check if user is in db
     // if NOT add to db
-    // challenger = challengerRoutes.getChallengerBySenderPsid(sender_psid);
-    // console.log(challenger);
-    // if (challenger.hasOwnProperty('_id')) {
-    //     console.log(`${challenger} has own _id`);
-    // } else {
-    //     console.log(`no challenger`);
-    // }
+    console.log(sender_psid);
     console.log("request start");
     request({
         "uri": `${API_URL}/challengers/senderPsid/${sender_psid}`,
@@ -141,22 +194,40 @@ function handleMessage(sender_psid, received_message) {
             console.log(`message sent! then res.body`);
             // console.log(request_body.message);
             // console.log(res.body);
-            console.log(`body`);
-            console.log(body);
+            console.log(typeof body);
+            let typeOfBody = typeof body;
+            console.log(`typeOfBody is ${typeOfBody}`);
+            let bodyObj = JSON.parse(body);
+            // console.log(body);
+            // console.log(body[0]);
+            console.log(typeof bodyObj);
             console.log("done body");
-            challenger = body;
+            // console.log(bodyObj[0]);
+            challenger = bodyObj[0];
+            let typeOfChallenger = typeof challenger;
+            console.log(`typeOfChallenger is ${typeOfChallenger}`);
+            console.log(typeof challenger);
             console.log("after res");
         } else {
             console.err(`Unable to send message: ${ err }`);
         }
     });
     console.log("request end");
+    if (challenger === undefined) {
+        console.log(`challenger undefined`);
+        createChallenger(sender_psid);
+    } else if (challenger.hasOwnProperty('_id')) {
+        console.log(`${challenger} has own _id`);
+    } else {
+      console.log(`no challenger and not undefined`);
+      
+    }
 
-    if (challenger.hasOwnProperty('_id')) {
-            console.log(`${challenger} has own _id`);
-        } else {
-            console.log(`no challenger`);
-        }
+    // if (challenger.hasOwnProperty('_id')) {
+    //     console.log(`no challenger`);
+    //     } else {
+    //         console.log(`${challenger} has own _id`);
+    //     }
     
     
     let first_name;
@@ -274,6 +345,24 @@ function handleMessage(sender_psid, received_message) {
             case "get started":
                 response = get_started_step_1;
                 // change user acceptedChallenge = true
+                break;
+            case "Get Started":
+                response = get_started_step_1;
+                break;
+            case "Get started":
+                response = get_started_step_1;
+                break;
+            case "get started":
+                response = get_started_step_1;
+                break;
+            case "Get Started ":
+                response = get_started_step_1;
+                break;
+            case "Get started ":
+                response = get_started_step_1;
+                break;
+            case "get started ":
+                response = get_started_step_1;
                 break;
             case "Yes!":
                 response = yes_registered_to_vote_1F;
@@ -447,6 +536,9 @@ function handlePostback(sender_psid, received_postback) {
 
     let payload = received_postback.payload;
     switch (payload) {
+        case "Accept the Challenge":
+            response = accept_the_challenge_step_1;
+            break;
         case "Already did":
             response = already_did_step_3;
             break;
@@ -468,6 +560,15 @@ function handlePostback(sender_psid, received_postback) {
         case "get started":
             response = get_started_step_1;
             break;
+          case "Get Started ":
+              response = get_started_step_1;
+              break;
+          case "Get started ":
+              response = get_started_step_1;
+              break;
+          case "get started ":
+              response = get_started_step_1;
+              break;
         case "Going to the poll":
             response = going_to_the_poll_step_2;
             break;

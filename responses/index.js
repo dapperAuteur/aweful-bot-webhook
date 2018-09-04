@@ -8,8 +8,9 @@ exports.simple_message = require('./simple_message');
 exports.webview_template = require('./webview_template');
 // default
 exports.default_response = require('./default_response');
-// step 1
-exports.webview_the_better_robot_step_1 = require('./step_1/webview_the_better_robot_step_1');
+// step 1 
+exports.accept_the_challenge_step_1 = require('./step_1/accept_the_challenge_step_1');
+exports.webview_six_by_six_step_1 = require('./step_1/webview_six_by_six_step_1');
 exports.get_started_step_1 = require('./step_1/get_started_step_1');
 exports.i_do_not_know_step_1 = require('./step_1/i_do_not_know_step_1');
 exports.done_registered_in_person_1G = require('./step_1/done_registered_in_person_1G');
